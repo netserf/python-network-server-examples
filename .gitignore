@@ -1,0 +1,34 @@
+# Packages
+dist
+build
+bin
+var
+sdist
+lib
+lib64
+__pycache__
+*.egg-info/
+
+# Unit test / coverage reports
+.coverage
+.tox
+.pytest_cache
+
+# Dev environment
+.direnv/
+.vscode/
+.envrc
+.pylintrc
+.ipynb_checkpoints/
+
+# Temp files
+*.swp
+TODO
+EXAMPLE
+template.md
+
+# Virtual environments
+venv
+
+# Test database
+*.sqlite
