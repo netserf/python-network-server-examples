@@ -19,4 +19,5 @@ pip install python-network-server-examples
 
 ## License
 
-`python-network-server-examples` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`python-network-server-examples` is distributed under the terms of the
+[MIT](https://spdx.org/licenses/MIT.html) license.
