@@ -16,7 +16,7 @@ def tcp_socket_client():
         s.sendall(message.encode("utf-8"))
         data = s.recv(BUFFER_SIZE)
 
-    print(f"Received message: {data.decode('utf-8')}")
+    print(f"Received response: {data.decode('utf-8')}")
 
 if __name__ == "__main__":
     main()

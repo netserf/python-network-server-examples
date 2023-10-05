@@ -14,7 +14,7 @@ def main():
 def tcp_socket_server():
     # Create a socket object using TCP as the transport protocol
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        print(f"Binding to {HOST}:{PORT}")
+        print(f"Binding to {HOST}:{PORT} (tcp)")
         # Bind the socket to the address and port
         s.bind((HOST, PORT))
         s.listen()
@@ -23,7 +23,7 @@ def tcp_socket_server():
         addr_str = ":".join(str(x) for x in addr)
         with conn:
             # Print message to the server console
-            print(f"Connected from {addr_str}")
+            print(f"Client connection from {addr_str}")
             # Loop forever
             while True:
                 # Receive data from the client
@@ -35,7 +35,7 @@ def tcp_socket_server():
                     break
                 # Echo the data back to the client
                 response = f"echo ... {data.decode('utf-8')}"
-                print(f"Sending message:  {response}")
+                print(f"Sending response:  {response}")
                 conn.sendall(response.encode("utf-8"))
 
 if __name__ == "__main__":
