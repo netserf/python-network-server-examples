@@ -14,7 +14,7 @@ def main():
 def udp_socket_server():
     # Create a socket object using UDP as the transport protocol
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-        print(f"Binding to {HOST}:udp-{PORT}")
+        print(f"Binding to {HOST}:{PORT} (udp)")
         # Bind the socket to the address and port
         s.bind((HOST, PORT))
         # Loop forever
@@ -26,9 +26,13 @@ def udp_socket_server():
             address = bytes_address_pair[1]
             message_str = str(message, encoding="utf-8")
             address_str = ":".join(str(x) for x in address)
-            print(f"Message from Client: addr={address_str} message='{message_str}'")
+            print(f"Client connection from {address_str}")
+            print(f"Received message: {message_str}")
             # Echo the data back to the client
-            s.sendto(b'echo: ' + message, address)
+            response = f"echo ... {message_str}"
+            print(f"Sending response:  {response}")
+            s.sendto(response.encode("utf-8"), address)
+            break
 
 if __name__ == "__main__":
     main()
